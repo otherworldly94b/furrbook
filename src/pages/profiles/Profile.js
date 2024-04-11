@@ -49,4 +49,4 @@ const Profile = (props) => {
   );
 };
 
-export default Profile;
+export default Profile; 
