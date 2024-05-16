@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useCurrentUser, useSetCurrentUser } from '/workspace/moments-redo/src/contexts/CurrentUserContext.js';
+import { useCurrentUser, useSetCurrentUser } from '/workspace/furrbook/src/contexts/CurrentUserContext.js';
 import styles from '../../src/styles/Messages.module.css';
 
 function MessagingPage() {
