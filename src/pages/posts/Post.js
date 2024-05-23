@@ -22,6 +22,8 @@ const Post = (props) => {
     updated_at,
     postPage,
     setPosts,
+    is_bookmarked,
+    bookmark_id,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -73,6 +75,39 @@ const Post = (props) => {
     }
   };
 
+  const handleBookmark = async () => {
+    try {
+      const { data } = await axiosRes.post("/bookmarks/", { post: id });
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, is_bookmarked: true, bookmark_id: data.id }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      //console.log(err);
+    }
+  };
+
+  const handleUnbookmark = async () => {
+    try {
+      // Assuming your bookmark detail endpoint is at /bookmarks/<id>/
+      await axiosRes.delete(`/bookmarks/${bookmark_id}/`);
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, is_bookmarked: false, bookmark_id: null }
+            : post
+        }),
+      }));
+    } catch (err) {
+      //console.log(err);
+    }
+  };
+  
   return (
     <Card className={styles.Post}>
       <Card.Body>
@@ -123,6 +158,30 @@ const Post = (props) => {
             </OverlayTrigger>
           )}
           {likes_count}
+          {is_owner ? (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>You can't bookmark your own post!</Tooltip>}
+            >
+              <i className="fas fa-bookmark" />
+            </OverlayTrigger>
+          ) : bookmark_id ? (
+            <span onClick={handleUnbookmark}>
+              <i className={`far fa-bookmark ${styles.Bookmark}`} />
+            </span>
+          ) : currentUser ? (
+            <span onClick={handleBookmark}>
+              <i className={`far fa-bookmark ${styles.BookmarkOutline}`} />
+            </span>
+          ) : (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Log in to bookmark posts!</Tooltip>}
+            >
+              <i className="far fa-bookmark" />
+            </OverlayTrigger>
+          )}
+          
           <Link to={`/posts/${id}`}>
             <i className="far fa-comments" />
           </Link>
