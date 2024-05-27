@@ -22,14 +22,15 @@ const Post = (props) => {
     updated_at,
     postPage,
     setPosts,
-    is_bookmarked,
+    bookmarks_count,
     bookmark_id,
   } = props;
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
-
+  
+  console.log("those are props= ",props)
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
@@ -77,12 +78,12 @@ const Post = (props) => {
 
   const handleBookmark = async () => {
     try {
-      const { data } = await axiosRes.post("/bookmarks/", { post: id });
+      const { data } = await axiosRes.post("/bookmarks/", { bookmark_post: id });
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, is_bookmarked: true, bookmark_id: data.id }
+            ? { ...post, bookmarks_count: post.bookmarks_count + 1, bookmark_id: data.id }
             : post;
         }),
       }));
@@ -93,13 +94,12 @@ const Post = (props) => {
 
   const handleUnbookmark = async () => {
     try {
-      // Assuming your bookmark detail endpoint is at /bookmarks/<id>/
       await axiosRes.delete(`/bookmarks/${bookmark_id}/`);
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
           return post.id === id
-            ? { ...post, is_bookmarked: false, bookmark_id: null }
+            ? { ...post, bookmarks_count: post.bookmarks_count - 1, bookmark_id: null }
             : post
         }),
       }));
@@ -181,7 +181,7 @@ const Post = (props) => {
               <i className="far fa-bookmark" />
             </OverlayTrigger>
           )}
-          
+          {bookmarks_count}
           <Link to={`/posts/${id}`}>
             <i className="far fa-comments" />
           </Link>

@@ -39,6 +39,7 @@ function PostsPage({ message, filter = "" }) {
       }
     };
 
+
     setHasLoaded(false);
     const timer = setTimeout(() => {
       fetchPosts();
