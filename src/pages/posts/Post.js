@@ -24,6 +24,8 @@ const Post = (props) => {
     setPosts,
     bookmarks_count,
     bookmark_id,
+    dislikes_count,
+    dislike_id,
   } = props;
 
   const currentUser = useCurrentUser();
@@ -107,6 +109,38 @@ const Post = (props) => {
       //console.log(err);
     }
   };
+
+  const handleDislike = async () => {
+    try {
+      const { data } = await axiosRes.post("/dislikes/", { dislike_post: id });
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, dislikes_count: post.dislikes_count + 1, dislike_id: data.id }
+            : post;
+        }),
+      }));
+    } catch (err) {
+      //console.log(err);
+    }
+  };
+
+  const handleUndislike = async () => {
+    try {
+      await axiosRes.delete(`/dislikes/${dislike_id}/`);
+      setPosts((prevPosts) => ({
+        ...prevPosts,
+        results: prevPosts.results.map((post) => {
+          return post.id === id
+            ? { ...post, dislikes_count: post.dislikes_count - 1, dislike_id: null }
+            : post
+        }),
+      }));
+    } catch (err) {
+      //console.log(err);
+    }
+  };
   
   return (
     <Card className={styles.Post}>
@@ -182,6 +216,30 @@ const Post = (props) => {
             </OverlayTrigger>
           )}
           {bookmarks_count}
+          {is_owner ? (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>You can't dislike your own post!</Tooltip>}
+            >
+              <i className="fas fa-thumbs-down"></i>
+            </OverlayTrigger>
+          ) : dislike_id ? (
+            <span onClick={handleUndislike}>
+              <i className={`fas fa-thumbs-down ${styles.Dislike}`} />
+            </span>
+          ) : currentUser ? (
+            <span onClick={handleDislike}>
+              <i className={`fas fa-thumbs-down ${styles.DislikeOutline}`} />
+            </span>
+          ) : (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>Log in to dislike posts!</Tooltip>}
+            >
+              <i className="fas fa-thumbs-down" />
+            </OverlayTrigger>
+          )}
+          {dislikes_count}
           <Link to={`/posts/${id}`}>
             <i className="far fa-comments" />
           </Link>

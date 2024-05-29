@@ -34,3 +34,15 @@
   .BookmarkOutline:hover {
     color: #f85032;
   }
+
+  .Dislike {
+    color: #f85032;
+  }
+  
+  .Dislike:hover {
+    color: #EA9937;
+  }
+  
+  .DislikeOutline:hover {
+    color: #f85032;
+  }

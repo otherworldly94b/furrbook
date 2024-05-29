@@ -14,7 +14,6 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
-import MessagingPage from './components/MessagingPage';
 import NotFound from "./components/NotFound";
 
 function App() {
@@ -63,6 +62,16 @@ function App() {
               />
             )}
           />
+          <Route
+            exact
+            path="/disliked"
+            render={() => (
+              <PostsPage
+                message="No results found. Adjust the search keyword or dislike a post."
+                filter={`dislikes__owner__profile=${profile_id}&ordering=-dislikes__created_at&`}
+              />
+            )}
+          />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
@@ -83,10 +92,6 @@ function App() {
             exact
             path="/profiles/:id/edit"
             render={() => <ProfileEditForm />}
-          />
-          <Route
-            exact path="/messages"
-            render={() => <MessagingPage />}
           />
           <Route render={() => <NotFound />} />
         </Switch>
