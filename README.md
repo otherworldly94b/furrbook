@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# Furrbook - React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project description
+Furrbook is a social media platform all about showing off your furry friends. It has been designed for its users to share their pets' most interesting, funny and beautiful moments. The application consists of the React app and an API. Welcome to the React front end project section.
 
-## Available Scripts
+[Furrbook - React live site](https://my-social-media-app-ach-e0fa09aef052.herokuapp.com/)
 
-In the project directory, you can run:
+![Am I Responsive]()
 
-### `npm start`
+### User Stories
+|  Category |    as   |            I want to           |                                           so that I can                                          |                 UI components                |
+|:---------:|:-------:|:------------------------------:|:------------------------------------------------------------------------------------------------:|:--------------------------------------------:|
+| auth      | user    | register for an account        | have a personal profile with a picture                                                           | SignUpForm<br>ProfilePage<br>ProfileEditForm |
+| auth      | user    | register for an account        | create, like, dislike, bookmark and comment on posts                                             | Post<br>PostPage<br>Comment                  |
+| auth      | user    | register for an account        | follow users                                                                                     | Profile<br>ProfilePage                       |
+| posts     | visitor | view a list of posts           | browse the most recent uploads                                                                   | PostsPage                                    |
+| posts     | visitor | view an individual post        | see user feedback, i.e. likes, dislikes, bookmarks and read comments                             | Post<br>PostPaget                            |
+| posts     | visitor | search a list of posts         | find a post by a specific artist or a title                                                      | PostsPage                                    |
+| posts     | visitor | scroll through a list of posts | browse the site more comfortably                                                                 | InfiniteScrollComponent                      |
+| posts     | user    | edit and delete my post        | correct or hide any mistakes                                                                     | PostEditForm<br>MoreDropdownMenu             |
+| posts     | user    | create a post                  | share my furry friends with others                                                               | PostCreateForm                               |
+| posts     | user    | view liked posts               | go back often to my favourite posts                                                              | PostsPage                                    |
+| posts     | user    | view disliked posts            | go back often to my least favourite posts                                                        | PostsPage                                    |
+| posts     | user    | view bookmarked posts          | go back often to my saved posts                                                                  | PostsPage                                    |
+| posts     | user    | view followed users' posts     | keep up with my favourite users' furry friends                                                   | PostsPage                                    |
+| likes     | user    | like a post                    | express my interest in someone's shared content                                                  | Post like icon                               |
+| likes     | user    | unlike a post                  | express that my interest in someone's shared moment has faded away                               | Post (un) like icon                          |
+| dislikes  | user    | dislike a post                 | express my disinterest in someone's shared content                                               | Create dislike                               |
+| dislikes  | user    | undislike a post               | express that my disinterest in someone's shared content has faded away                           | Destroy dislike                              |
+| bookmark  | user    | bookmark a post                | express my interest in saving someone's shared content                                           | Create bookmark                              |
+| bookmark  | user    | unbookmark a post              | express that my interest in saving someone's shared content has faded away                       | Destroy bookmark                             |
+| comments  | user    | create a comment               | share my thoughts on other people's content                                                      | PostPage<br>CommentCreateForm                |
+| comments  | user    | edit and delete my comment     | correct or hide any mistakes                                                                     | PostPage<br>Comment<br>MoreDropdownMenu      |
+| profiles  | user    | view a profile                 | see a user's recent posts + post, followers, following count data                                | ProfilePage<br>Post                          |
+| profiles  | user    | edit a profile                 | update my profile information                                                                    | ProfileEditForm                              |
+| followers | user    | follow a profile               | express my interest in someone's content                                                         | Profile follow button                        |
+| followers | user    | unfollow a profile             | express that my interest in someone's content has faded away and remove their posts from my feed | Profile (un) follow button                   |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Content Management:
+Owner can manage all functions from their logged in page.
 
-### `npm test`
+![Bookmarks]()
+![Unbookmarks]()
+![Likes]()
+![Unlikes]()
+![Dislikes]()
+![UnDislikes]()
+![Comments]()
+![EditComments]()
+![DeleteComments]()
+![Profiles]()
+![EditProfiles]()
+![ChangeUsernameProfiles]()
+![ChnagePasswordProfiles]()
+![Follow]()
+![UnFollow]()
+![Add Post]()
+![Edit Post]()
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Detailed page and component breakdown:
 
-### `npm run build`
+![Diagram]()
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Most reused components:
+- PostsPage:
+    - Home, Feed, Liked. Disliked, Bookmarked
+- Post:
+    - PostsPage
+- Profile:
+    - PopularProfiles, PopularProfiles (mobile)
+- DropdownMenus:
+    - Post, ProfilePage, Comment
+- InfiniteScrollComponent:
+    - PostPage (loading Comment components)
+    - PostsPage (loading all, feed or liked, disliked, bookmarked Post components)
+    - ProfilePage (loading Post components that belong to the profile)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tests:
+### Automated:
+used the msw library to mock user and logout endpoints
+tested the NavBar component:
+renders without a problem
+renders the link to a user profile for a logged in user
+renders the sign in and sign up buttons again on logout
+### Manual:
+every other feature tested extensively
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Libraries, contexts and hooks:
+react-infinite-scroll-component
+introduced to replace traditional pagination with lazy loading instead of pagination to make the application more performant and seem more snappy/ engaging
+react-bootstrap:
+introduced
+contexts:
+CurrentUserContext exposes the user state to the entire app. Relevant components can subscribe to its changes
+ProfileDataContext exposes the profile state to the entire app. Enables the PopularProfiles component to be in sync with the ProfilePage contents
+custom hooks written to reduce repeatable state logic:
+useClickOutsideToggle: enable toggle on the burger menu
+useRedirect: enable redirect for users who are either logged in or logged out, depending on the use case
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Setup and Configuration
+This section details the steps taken to configure the project for deployment:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Pre-build Efficiency:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Pre-build Script: Incorporate a pre-build script within your build process. This script can automate tasks resulting in a smaller and faster deployment package.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Farewell, Console Logs:
 
-## Learn More
+- Eliminate Console Logs: Console logs can clutter your production environment logs. Consider implementing a more robust logging solution or filtering out unnecessary console logs during deployment.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Bootstrap Optimization:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Minimize Bootstrap Imports: Instead of importing the entire Bootstrap library, leverage specific components you require. This reduces the overall bundle size and improves loading times.
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project can be deployed on various cloud platforms. Here are generic instructions for deploying on Heroku:
 
-### `npm run build` fails to minify
+1. **Heroku Setup:** Create a Heroku account and install the Heroku CLI following their instructions [Heroku Documentation Link](https://devcenter.heroku.com/).
+2. **Git Integration:** Initialize a Git repository in your project directory and push your code to Heroku. Refer to the Heroku documentation for details [Heroku Git Deployment Guide](https://devcenter.heroku.com/articles/deploying-python).
+3. **Requirements:** The package.json file lists all your project dependencies. Heroku will install them automatically during deployment.
+4. **Procfile:** Create a `Procfile` file specifying the command to run your Django application.
+5. **Deploy:** Once everything is set up, run `heroku deploy` to deploy your application to Heroku or log in to your Heroku Dashboard and manually Deploy Branch from the Deploy tab.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Note:** These are general guidelines. Refer to Heroku's documentation for the latest and most accurate instructions.
