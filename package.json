@@ -23,8 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint  --fix src/**/*.js",
-    "format": "prettier src/**/*.js --write. --config ./.prettierrc"
+    "lint": "eslint  --fix src/**/*.js"
   },
   "eslintConfig": {
     "extends": [
@@ -52,8 +51,5 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "msw": "^0.35.0",
     "prettier": "^3.2.5"
-  },
-  "engines": {
-    "node": "20.13.1"
   }
 }
