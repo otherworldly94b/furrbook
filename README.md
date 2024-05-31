@@ -5,7 +5,7 @@ Furrbook is a social media platform all about showing off your furry friends. It
 
 [Furrbook - React live site](https://my-social-media-app-ach-e0fa09aef052.herokuapp.com/)
 
-![Am I Responsive]()
+![Am I Responsive](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177660/Screenshots/Am_I_Responsive_lddxj9.png)
 
 ### User Stories
 |  Category |    as   |            I want to           |                                           so that I can                                          |                 UI components                |
@@ -41,23 +41,59 @@ Furrbook is a social media platform all about showing off your furry friends. It
 ### Content Management:
 Owner can manage all functions from their logged in page.
 
-![Bookmarks]()
-![Unbookmarks]()
-![Likes]()
-![Unlikes]()
-![Dislikes]()
-![UnDislikes]()
-![Comments]()
-![EditComments]()
-![DeleteComments]()
-![Profiles]()
-![EditProfiles]()
-![ChangeUsernameProfiles]()
-![ChnagePasswordProfiles]()
-![Follow]()
-![UnFollow]()
-![Add Post]()
-![Edit Post]()
+### Feed:
+
+![FeedPage](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177624/Screenshots/FeedPage_vn1mr8.png)
+
+### Bookmarks:
+
+![Bookmarks](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177649/Screenshots/bookmarks_px60i9.png)
+![Unbookmarks](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177631/Screenshots/Unbookmark_xjdkl0.png)
+![BookmarksPage](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177665/Screenshots/BookmarkedPage_njyvlh.png)
+
+### Likes:
+
+![Likes](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177644/Screenshots/likes_tivmhi.png)
+![Unlikes](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177648/Screenshots/Unlikes_skqhli.png)
+![LikesPage](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177662/Screenshots/LikedPage_mlztta.png)
+
+### Dislikes:
+
+![Dislikes](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177644/Screenshots/Dislike_zqdlsl.png)
+![UnDislikes](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177631/Screenshots/Undislike_x262ax.png)
+![DislikesPage](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177616/Screenshots/DislikedPage_ztetzr.png)
+
+### Comments:
+
+![Comments](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177601/Screenshots/Comments_najeq2.png)
+![EditComments](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177602/Screenshots/CommentsEdit_djjouz.png)
+![DeleteComments](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177638/Screenshots/CommentsDelete_kb6for.png)
+
+### Profiles:
+
+![EditProfiles](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177610/Screenshots/EditProfileDropdown_cgro63.png)
+![EditProfiles](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177611/Screenshots/EditProfile_tji2ha.png)
+![ChangeUsernameProfiles](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177601/Screenshots/ChangeUsernameProfileDropdown_wefxrm.png)
+![ChangeUsernameProfiles](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177601/Screenshots/ChangeUsernameProfile_cwjkux.png)
+![ChangePasswordProfiles](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177601/Screenshots/ChangePasswordProfileDropdown_wgt99d.png)
+![ChnagePasswordProfiles](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177601/Screenshots/ChangePasswordProfile_hkgfns.png)
+
+### Follow:
+
+![Follow](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177620/Screenshots/FollowButton_kmyaaj.png)
+![UnFollow](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177637/Screenshots/UnfollowButton_vx3n7m.png)
+
+### Post:
+
+![Add Post](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177637/Screenshots/AddPost_iucgh3.png)
+![Edit Post](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177612/Screenshots/EditPost_nn7rul.png)
+![Edit Post](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177609/Screenshots/EditPostEdited_mxxcjh.png)
+![Delete Post](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177609/Screenshots/DeletePost_hnybqj.png)
+
+### Sign Up & In:
+
+![SignUp](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177622/Screenshots/SignUpPage_yqgkkd.png)
+![SignIn](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177622/Screenshots/SignInPage_pyulc4.png)
 
 ## Design:
 Furrbook prioritizes a user-friendly and visually appealing experience.
@@ -68,7 +104,7 @@ Furrbook prioritizes a user-friendly and visually appealing experience.
 
 ### Detailed page and component breakdown:
 
-![Diagram]()
+![Diagram](https://res.cloudinary.com/dgzf4ydy2/image/upload/v1717177662/Screenshots/Furrbook-React.drawio_rczwuz.png)
 
 ### Most reused components:
 - PostsPage:
@@ -100,53 +136,46 @@ The project utilizes the msw library to effectively mock user and logout API end
 ### Manual testing:
 Extensive manual testing involved clicking through all functionalities, verifying form submissions, and confirming page loads.
 
-- ## Test Cases
+- #### Test Cases
     - A comprehensive list of test cases is documented in a Google Sheet. You can access it here: [Test Cases](https://docs.google.com/spreadsheets/d/1LvJkSQGfZ4yk8WmQe60oK-RN7XQrBZjLdl2Cw6R3Tow/edit?usp=sharing)
 
 
-## Project Infrastructure: Libraries, Contexts, and Hooks
-This section explores the essential building blocks that contribute to the application's functionality and user experience.
+## Project Structure and Dependencies
+This section explores the essential building blocks and tools that contribute to the application's functionality, user experience, and maintainability.
 
-- Streamlined Data Fetching with react-infinite-scroll-component:
-    - The project incorporates react-infinite-scroll-component as a replacement for traditional pagination. This library enables smooth and efficient lazy loading, eliminating the need for static page breaks. This approach enhances performance by loading content only when necessary, resulting in a more responsive and engaging user experience.
+### Libraries and UI Components
+The project leverages several libraries to streamline development and enhance the user experience:
 
-- React Bootstrap Integration:
-    - The project leverages react-bootstrap to seamlessly integrate Bootstrap components within the React application. This library provides pre-built and customizable Bootstrap components, simplifying the development process and ensuring consistency in styling.
+- react-infinite-scroll-component: Enables smooth and efficient lazy loading of content, eliminating the need for static pagination and improving performance.
+- react-bootstrap: Provides pre-built and customizable Bootstrap components, simplifying development and ensuring consistency in styling.
 
-- Centralized State Management with Contexts:
-    - CurrentUserContext: This context serves as a central location for managing the user's authentication state. Components throughout the application can subscribe to changes within this context, ensuring they display the appropriate UI elements based on the user's login status.
-    - ProfileDataContext: This context manages the state of user profile data. By utilizing this context, components like PopularProfiles can stay in sync with the content displayed on the ProfilePage, leading to a more cohesive user experience.
+### State Management with Contexts
+Centralized state management is achieved through custom contexts:
 
-- Custom Hooks for Enhanced Reusability:
-    - The project includes custom hooks designed to reduce code duplication and improve maintainability.
-    - useClickOutsideToggle: This hook simplifies the implementation of a toggle functionality that activates when a user clicks outside a designated area. This is commonly used for dropdown menus or modal components.
-    - useRedirect: This hook streamlines user redirects based on their login status. Depending on the use case, it can redirect logged-in users to appropriate dashboards or redirect non-logged-in users to login or signup pages.
+- CurrentUserContext: Manages the user's authentication state, allowing components throughout the application to adapt their behavior based on the user's login status.
+- ProfileDataContext: Manages user profile data, keeping components like PopularProfiles and ProfilePage in sync for a cohesive user experience.
+
+### Custom Hooks for Reusability
+The project includes custom hooks to reduce code duplication and improve maintainability:
+
+- useClickOutsideToggle: Simplifies implementing toggle functionality based on clicks outside a designated area (commonly used for dropdowns or modals).
+- useRedirect: Streamlines user redirects based on login status, directing users to appropriate dashboards or login pages.
 
 These well-structured libraries, contexts, and custom hooks establish a strong foundation for a scalable and maintainable React application.
 
-### package.json: A Glimpse into Project Dependencies
-The package.json file plays a crucial role in managing project dependencies and scripts. Here's a breakdown of some key elements:
+### package.json: Project Dependencies
+The package.json file plays a crucial role in managing project dependencies and scripts. Key elements include:
 
-- Dependencies: This section lists the external libraries required for the application to function. These include libraries for UI components (like React Bootstrap), testing frameworks (Jest and related libraries), API communication (Axios), and authentication (JWT-decode).
+- Dependencies: External libraries required for application functionality (e.g., UI components, testing frameworks, API communication, authentication).
+- Dev Dependencies: Development-specific tools like ESLint and Prettier for code linting and formatting, and msw for mocking API endpoints during testing.
+- Scripts: Various commands for development and deployment workflows (starting development server, building production application, running tests, linting code).
 
-- Dev Dependencies: This section contains development-specific dependencies. Tools like ESLint and Prettier are included for code linting and formatting, ensuring code quality and consistency. Additionally, msw is included for mocking API endpoints during testing.
+### Project Setup and Configuration
+This section details the steps taken to configure the project for deployment, focusing on optimizing the build process and preparing for production:
 
-- Scripts: This section defines various commands for development and deployment workflows. Scripts for starting the development server, building the production-ready application, running tests, and linting code are all included.
-
-## Project Setup and Configuration
-This section details the steps taken to configure the project for deployment:
-
-### Pre-build Efficiency:
-
-- Pre-build Script: Incorporate a pre-build script within your build process. This script can automate tasks resulting in a smaller and faster deployment package.
-
-### Farewell, Console Logs:
-
-- Eliminate Console Logs: Console logs can clutter your production environment logs. Consider implementing a more robust logging solution or filtering out unnecessary console logs during deployment.
-
-### Bootstrap Optimization:
-
-- Minimize Bootstrap Imports: Instead of importing the entire Bootstrap library, leverage specific components you require. This reduces the overall bundle size and improves loading times.
+- Pre-build Efficiency: Incorporate a pre-build script to automate tasks that result in a smaller and faster deployment package.
+- Farewell, Console Logs: Implement a robust logging solution or filter out unnecessary console logs to avoid cluttering production environment logs.
+- Bootstrap Optimization: Minimize Bootstrap imports by using only the specific components required, reducing the overall bundle size and improving loading times.
 
 ### Deployment
 
@@ -163,9 +192,9 @@ This project can be deployed on various cloud platforms. Here are generic instru
 ## Credits
 - Major Code credits to the [Moments Walkthrough](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+1/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/) project with a few new custom elements, additions and functionalities.
 - Icon set used from [fontawesome](https://fontawesome.com/icons)
-- Coolors for design
-- Favicon converter - https://favicon.io/favicon-converter/
-- Logo.com logo maker - https://logo.com/login?returnTo=%2Fdashboard%2Fyour-logo-files
-- All images are from Pexels or free royalty sites - https://www.pexels.com/
-- Draw.io for Diagrams - https://www.drawio.com/
+- [Coolors](https://coolors.co/?home) for colour design 
+- [Favicon converter](https://favicon.io/favicon-converter/)
+- [LOGO.com](https://logo.com/login?returnTo=%2Fdashboard%2Fyour-logo-files)
+- All images are from [Pexels](https://www.pexels.com/) or other free royalty sites
+- [Draw.io](https://www.drawio.com/) for Diagrams 
 - Major credits to my mentor for always advising me and listening to my ideas.
