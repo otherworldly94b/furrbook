@@ -167,7 +167,7 @@ These well-structured libraries, contexts, and custom hooks establish a strong f
 The package.json file plays a crucial role in managing project dependencies and scripts. Key elements include:
 
 - Dependencies: External libraries required for application functionality (e.g., UI components, testing frameworks, API communication, authentication).
-- Dev Dependencies: Development-specific tools like ESLint and Prettier for code linting and formatting, and msw for mocking API endpoints during testing.
+- Dev Dependencies: Development-specific tools like ESLint for code linting and formatting, and msw for mocking API endpoints during testing.
 - Scripts: Various commands for development and deployment workflows (starting development server, building production application, running tests, linting code).
 
 ### Project Setup and Configuration
